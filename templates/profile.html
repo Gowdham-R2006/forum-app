@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    {% extends "base.html" %}
+{% block content %}
+<h2>Update Profile</h2>
+<form method="POST">
+    <input type="text" name="username" value="{{ user.username }}" required><br>
+    <textarea name="profile_info">{{ user.profile_info }}</textarea><br>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
+</body>
+</html>
+
+

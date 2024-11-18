@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ session['username'] }}</h2>
+<form method="POST">
+    <textarea name="content" placeholder="Write a post..." required></textarea><br>
+    <button type="submit">Post</button>
+</form>
+<h3>All Posts:</h3>
+<ul>
+    {% for post in posts %}
+    <li>
+        {{ post.content }} - Likes: {{ post.likes|length }}
+        <a href="{{ url_for('like_post', post_id=post.id) }}">Like</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
